@@ -1,0 +1,14 @@
+//
+// Created by leoz on 1/13/18.
+//
+
+#ifndef BLOCKING_THREAD_SAFE_QUEUE_WORKER_BASE_H
+#define BLOCKING_THREAD_SAFE_QUEUE_WORKER_BASE_H
+
+
+class worker_base {
+
+};
+
+
+#endif //BLOCKING_THREAD_SAFE_QUEUE_WORKER_BASE_H

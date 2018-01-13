@@ -1,3 +1,0 @@
-/Users/leoz/Documents/Source/blocking_thread_safe_queue/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/leoz/Documents/Source/blocking_thread_safe_queue/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/leoz/Documents/Source/blocking_thread_safe_queue/cmake-build-debug/CMakeFiles/blocking_thread_safe_queue.dir
