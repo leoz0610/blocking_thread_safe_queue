@@ -2,6 +2,7 @@
 #include <sstream>
 #include <vector>
 #include <thread>
+#include <memory>
 
 
 // application headers
@@ -11,7 +12,7 @@
 
 using namespace BlockingQueue;
 
-void runWorker(Workers::worker_base *worker) {
+void runWorker(std::shared_ptr<Workers::worker_base> worker) {
     worker->start();
 }
 
@@ -27,7 +28,8 @@ int main() {
         std::stringstream ss;
         ss << "P" << i;
         std::string name = ss.str();
-        threadList.push_back(std::thread(runWorker, new Workers::producer_worker(name, queue)));
+        std::shared_ptr<Workers::worker_base> producer(new Workers::producer_worker(name, queue));
+        threadList.push_back(std::thread(runWorker, producer));
     }
 
     for (int i = 0; i < threadList.size(); ++i) {
