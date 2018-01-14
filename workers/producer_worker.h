@@ -13,7 +13,7 @@
 namespace BlockingQueue {
 namespace Workers {
 
-    class producer_worker : public worker_base {
+    class producer_worker final : public worker_base {
     public:
         producer_worker() = default;
 
@@ -21,7 +21,7 @@ namespace Workers {
 
         ~producer_worker() override = default;
 
-        void start() override;
+        void start() override final;
     };
 } // Workers
 } // BlockingQueue
