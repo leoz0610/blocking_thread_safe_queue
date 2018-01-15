@@ -3,6 +3,8 @@
 //
 
 // std headers
+#include <sstream>
+#include <thread>
 
 
 // application headers
@@ -20,6 +22,24 @@ namespace Workers {
     // Public members
     void producer_worker::start() {
         printf("Producer thread %s starting...\n", workerName.c_str());
+
+        while (true) {
+            int item = getRandomNumber();
+            std::stringstream ss;
+            ss << workerName << " produces item " << item;
+
+            printf("%s\n", ss.str().c_str());
+
+            try {
+                queue->push(item);
+            } catch (const std::exception &ex) {
+                std::stringstream errstr;
+                errstr << "Error: " << ex.what();
+                printf("%s\n", errstr.str().c_str());
+            }
+
+            std::this_thread::sleep_for(std::chrono::seconds(3));
+        }
     }
 
 } // Workers

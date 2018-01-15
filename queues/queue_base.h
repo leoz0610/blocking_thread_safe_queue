@@ -13,9 +13,9 @@ namespace Queues {
         const int capacity;
 
     public:
-        explicit queue_base(int &capacity) : capacity(capacity) { }
+        explicit queue_base(int capacity) : capacity(capacity) { }
 
-        virtual ~queue_base() = 0;
+        virtual ~queue_base() = default;
 
         virtual void push(int item) = 0;
 

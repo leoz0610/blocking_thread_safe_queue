@@ -19,7 +19,7 @@ void runWorker(std::shared_ptr<Workers::worker_base> worker) {
 int main() {
     int capacity(3);
 
-    std::shared_ptr<Queues::queue_base> queue = Queues::queue_factory::create(capacity);
+    std::shared_ptr<Queues::queue_base> queue = Queues::queue_factory::create(Queues::MUTEX, capacity);
 
     std::vector<std::thread> threadList;
     int numOfProducer(3);

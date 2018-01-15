@@ -8,6 +8,7 @@
 //std headers
 #include <string>
 #include <memory>
+#include <cstdlib>
 
 
 //application headers
@@ -22,6 +23,10 @@ namespace Workers {
         const std::string workerName;
 
         const std::shared_ptr<Queues::queue_base> queue;
+
+        int getRandomNumber() {
+            return rand() % 100;
+        }
 
     public:
         worker_base() = default;
