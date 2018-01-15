@@ -14,9 +14,12 @@
 
 namespace BlockingQueue {
 namespace Queues {
+    enum queue_type {
+        MUTEX
+    };
 
     struct queue_factory final {
-        static std::shared_ptr<queue_base> create(const int capacity);
+        static std::shared_ptr<queue_base> create(queue_type type, const int capacity);
     };
 
 } // Queues
