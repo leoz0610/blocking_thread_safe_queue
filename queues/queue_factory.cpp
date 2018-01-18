@@ -6,6 +6,8 @@
 // application headers
 #include "queue_factory.h"
 #include "mutex_blocking_queue.h"
+#include "condition_blocking_queue.h"
+
 
 namespace BlockingQueue {
 namespace Queues {
@@ -16,6 +18,9 @@ namespace Queues {
         switch (type) {
             case MUTEX:
                 queuePtr.reset(new mutex_blocking_queue(capacity));
+                break;
+            case CONDITION:
+                queuePtr.reset(new condition_blocking_queue(capacity));
                 break;
         }
         return queuePtr;

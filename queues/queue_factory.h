@@ -15,7 +15,8 @@
 namespace BlockingQueue {
 namespace Queues {
     enum queue_type {
-        MUTEX
+        MUTEX,
+        CONDITION
     };
 
     struct queue_factory final {
